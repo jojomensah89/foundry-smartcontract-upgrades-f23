@@ -6,7 +6,9 @@ import {UUPSUpgradeable} from "@openzeppelin/contracts-upgradeable/proxy/utils/U
 contract BoxV2 is UUPSUpgradeable {
     uint256 internal number;
 
-    function setNumber(uint256 _number) external {}
+    function setNumber(uint256 _number) external {
+        number = _number;
+    }
 
     function getNumber() external view returns (uint256) {
         return number;
@@ -16,5 +18,5 @@ contract BoxV2 is UUPSUpgradeable {
         return 2;
     }
 
-    function _authorizeUpgrade(address newImplementation) internal override  {}
+    function _authorizeUpgrade(address newImplementation) internal override {}
 }
